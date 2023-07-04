@@ -7,8 +7,9 @@
     android:layout_height="match_parent"
 
     tools:context=".MainActivity"
-    android:background="#6B95DA"
-    android:gravity="center">
+    android:background="@drawable/abc"
+    android:gravity="center"
+    >
 
     <LinearLayout
         android:id="@+id/l1"

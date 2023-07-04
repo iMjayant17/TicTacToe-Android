@@ -12,6 +12,7 @@ import java.util.*
 import kotlin.concurrent.schedule
 
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
 
@@ -89,14 +90,15 @@ class MainActivity : AppCompatActivity() {
     }
     var p1 = arrayListOf<Int>()
     var p2 = arrayListOf<Int>()
+    @Suppress("DEPRECATION")
     @SuppressLint("ResourceAsColor")
     private fun afterclick(value: Int, clicked: Button) {
         moves.add(value)
         playerchance +=1
         if (playerchance%2!=0){
             clicked.text = "X"
-//            clicked.setBackgroundColor(R.color.red)
-//          clicked.setTextColor(R.color.red)
+          clicked.setBackgroundColor(resources.getColor(R.color.red))
+          clicked.setTextColor(resources.getColor(R.color.white))
             clicked.textSize = 50F
             p1.add(value)
             if(checkWinP1()){
@@ -116,8 +118,8 @@ class MainActivity : AppCompatActivity() {
         else{
             clicked.text = "O"
 //
-//            clicked.setTextColor(R.color.green)
-//            clicked.setBackgroundColor(R.color.green)
+           clicked.setBackgroundColor(resources.getColor(R.color.green))
+          clicked.setTextColor(resources.getColor(R.color.white))
             clicked.textSize = 50F
             p2.add(value)
             if(checkWinP2()){
@@ -164,7 +166,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("ResourceAsColor")
     private fun clearbutton(i: Button) {
-//        i.setBackgroundColor(R.color.white)
+        i.setBackgroundColor(resources.getColor(R.color.white))
         i.text= ""
     }
 //
